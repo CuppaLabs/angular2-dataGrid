@@ -24,7 +24,7 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { NoContentComponent } from './no-content';
-import { CuppaDataGridModule } from 'cuppa-ng2-grid/cuppa-ng2-dataGrid';
+import { CuppaDataGridModule } from './angular2-dataGrid/angular2-dataGrid';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
