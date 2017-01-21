@@ -29,20 +29,21 @@ import { AppState } from './app.service';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="https://cuppalabs.github.io/angular2-social-login/">
+          <a class="navbar-brand" href="https://cuppalabs.github.io/angular2-dataGrid/">
           <img alt="Brand" src="assets/img/cuppa-logo.png">
           Cuppa Angular 2 Data Grid</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="https://github.com/CuppaLabs/angular2-social-login">Github</a></li>
+              <li><a href="https://github.com/CuppaLabs/angular2-dataGrid">Github</a></li>
 
             </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
     <div class="container">
-    <h1 style="text-align: center;padding: 30px;">Angular 2 Data Grid Example</h1>
+    <h1 style="text-align: center;padding: 20px 0px 0px 0px;">Angular 2 Data Grid Example</h1>
+    <h3 style="text-align: center;padding: 0px 0px 10px 0px;">Render 10,000+ records with high performance</h3>
     <cuppa-datagrid [datalist] = "arrayList" [config]="config"></cuppa-datagrid>
     </div>
     </main>
