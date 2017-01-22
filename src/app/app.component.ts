@@ -43,26 +43,10 @@ import { AppState } from './app.service';
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-    <div class="container">
+    <div class="col-md-12">
     <h1 style="text-align: center;padding: 20px 0px 0px 0px;">Angular 2 Data Grid Example</h1>
     <h3 style="text-align: center;padding: 0px 0px 10px 0px;">Render 10,000+ records with high performance</h3>
-    
-    <div class="col-md-10">
-      <cuppa-datagrid [datalist] = "arrayList" [config]="config"></cuppa-datagrid>
-    </div>
-    <div class="col-md-2">
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- datagrid-ads -->
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-4525567075133342"
-          data-ad-slot="2640021500"
-          data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-    
+      <cuppa-datagrid [datalist] = "arrayList" [config]="config"></cuppa-datagrid> 
     </div>
     </main>
 
