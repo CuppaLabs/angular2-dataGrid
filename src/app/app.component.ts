@@ -35,6 +35,8 @@ import { AppState } from './app.service';
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://github.com/CuppaLabs/angular2-dataGrid#cuppa-angular-2-data-grid-component">Getting Started</a></li>
+              <li><a href="https://github.com/CuppaLabs/angular2-dataGrid#getting-started">Documentation</a></li>
               <li><a href="https://github.com/CuppaLabs/angular2-dataGrid">Github</a></li>
 
             </ul>
@@ -44,7 +46,23 @@ import { AppState } from './app.service';
     <div class="container">
     <h1 style="text-align: center;padding: 20px 0px 0px 0px;">Angular 2 Data Grid Example</h1>
     <h3 style="text-align: center;padding: 0px 0px 10px 0px;">Render 10,000+ records with high performance</h3>
-    <cuppa-datagrid [datalist] = "arrayList" [config]="config"></cuppa-datagrid>
+    
+    <div class="col-md-10">
+      <cuppa-datagrid [datalist] = "arrayList" [config]="config"></cuppa-datagrid>
+    </div>
+    <div class="col-md-2">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- datagrid-ads -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-4525567075133342"
+          data-ad-slot="2640021500"
+          data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    
     </div>
     </main>
 
@@ -52,10 +70,8 @@ import { AppState } from './app.service';
   `
 })
 export class AppComponent implements OnInit {
-  public angularclassLogo = 'assets/img/angularclass-avatar.png';
-  public name = 'Angular 2 Webpack Starter';
-    arrayList:any[] = [];
-  config = {
+  arrayList:any[] = [];
+  private config = {
     w: 300,
     h: 300,
     itemHeight: 31,
