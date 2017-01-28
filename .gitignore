@@ -60,3 +60,7 @@ dll/
 *.css.shim.ts
 *.ngsummary.json
 *.shim.ngstyle.ts
+
+.vscode
+tslint.json
+typedoc.json
