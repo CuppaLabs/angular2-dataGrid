@@ -84,6 +84,13 @@ Thats all Folks !! You are good to go.
 
 Please raise any issues [here](https://github.com/CuppaLabs/angular2-dataGrid/issues)
 
+To run the code and build in your local, follw the below steps
+
+- git clone `https://github.com/CuppaLabs/angular2-dataGrid.git`
+- npm install
+- npm start
+- Go to `http://localhost:3000` where your app will run.
+
 ## Licence
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
