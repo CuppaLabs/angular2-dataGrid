@@ -16,10 +16,11 @@
                     <i *ngIf="column.sorting=='asc'" class="icon pe-7s-angle-down pe-lg"></i>
                 </div>
             </div>
+            <div class="vcolumn">button column</div>
         </div>
     <div class="container">
         <div style="position:absolute;top:0;left:0;opacity:0;width:1px;" [setContainerHeight]="totalHeight"></div>
-        <div *ngFor="let person of chunkArray;let i = index" class="vrow" style="position: absolute;" [styleProp]="chunkIndex[i]">
+        <div *ngFor="let person of chunkArray;let i = index" class="vrow" style="position: absolute;" [styleProp]="chunkIndex[i]" (click)="onRowClick(person)">
             <div *ngFor="let obj of person | keys" class="vcolumn" [columnWidth]="headSection">{{obj.value}}</div>
         </div>
     </div>

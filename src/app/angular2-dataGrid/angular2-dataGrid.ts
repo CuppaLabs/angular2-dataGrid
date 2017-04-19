@@ -17,6 +17,8 @@ export class CuppaDataGrid implements AfterViewInit{
     
     @Input() datalist: any;
     @Input() config: any;
+    @Output('onRowSelect') 
+        rowClick: EventEmitter<any> = new EventEmitter<any>();
 
     private width:any;
     private height:any;
@@ -237,6 +239,9 @@ export class CuppaDataGrid implements AfterViewInit{
             this.totalRows = this.items.length;
             this.updateView(this.scrollTop);
         }
+    }
+    private onRowClick(row:any){
+        this.rowClick.emit(row);
     }
 
  }

@@ -30,6 +30,11 @@
     width: 100%;
     border-bottom: 1px solid #e4e4e4;
     height: 31px;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+.cuppa-grid > .container > .vrow:hover{
+    background: rgba(25, 118, 210, 0.31);
 }
 .vcolumn{
     display: inline-block;

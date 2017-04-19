@@ -26,4 +26,8 @@ export class AppComponent {
             this.arrayList.push(tempObj);
        }
   }
+  private onRowClick(row:any){
+    console.log(row);
+    alert("selected row:"+ row.id +" "+row.name+" "+row.mobile);
+  }
 }

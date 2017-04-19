@@ -29,14 +29,14 @@ var styleDirective = (function () {
         this.el.nativeElement.style.top = this.styleVal;
     };
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Input */])('styleProp'), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Input */])('styleProp'), 
         __metadata('design:type', Number)
     ], styleDirective.prototype, "styleVal", void 0);
     styleDirective = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Directive */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Directive */])({
             selector: '[styleProp]'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ElementRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ElementRef */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ElementRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ElementRef */]) === 'function' && _a) || Object])
     ], styleDirective);
     return styleDirective;
     var _a;
@@ -49,14 +49,14 @@ var columnWidth = (function () {
         this.el.nativeElement.style.width = (100 / this.columnWidth.length) + "%";
     };
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Input */])('columnWidth'), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Input */])('columnWidth'), 
         __metadata('design:type', Array)
     ], columnWidth.prototype, "columnWidth", void 0);
     columnWidth = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Directive */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Directive */])({
             selector: '[columnWidth]'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ElementRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ElementRef */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ElementRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ElementRef */]) === 'function' && _a) || Object])
     ], columnWidth);
     return columnWidth;
     var _a;
@@ -72,14 +72,14 @@ var SetContainerHeight = (function () {
         this.el.nativeElement.style.height = this.containerHeight + "px";
     };
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Input */])('setContainerHeight'), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Input */])('setContainerHeight'), 
         __metadata('design:type', Array)
     ], SetContainerHeight.prototype, "containerHeight", void 0);
     SetContainerHeight = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Directive */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["h" /* Directive */])({
             selector: '[setContainerHeight]'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ElementRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ElementRef */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ElementRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ElementRef */]) === 'function' && _a) || Object])
     ], SetContainerHeight);
     return SetContainerHeight;
     var _a;
@@ -154,6 +154,7 @@ var CuppaDataGrid = (function () {
     function CuppaDataGrid(_elementRef, sanitizer) {
         this._elementRef = _elementRef;
         this.sanitizer = sanitizer;
+        this.rowClick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
         this.dataArray = ["111", "222", "333", "444"];
         this.chunkIndex = [];
         this.cachedItems = [];
@@ -338,24 +339,31 @@ var CuppaDataGrid = (function () {
             this.updateView(this.scrollTop);
         }
     };
+    CuppaDataGrid.prototype.onRowClick = function (row) {
+        this.rowClick.emit(row);
+    };
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Input */])(), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Input */])(), 
         __metadata('design:type', Object)
     ], CuppaDataGrid.prototype, "datalist", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Input */])(), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Input */])(), 
         __metadata('design:type', Object)
     ], CuppaDataGrid.prototype, "config", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Output */])('onRowSelect'), 
+        __metadata('design:type', (typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]) === 'function' && _a) || Object)
+    ], CuppaDataGrid.prototype, "rowClick", void 0);
     CuppaDataGrid = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Component */])({
             selector: 'cuppa-datagrid',
             template: __webpack_require__(464),
             styles: [__webpack_require__(457), __webpack_require__(458)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ElementRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* ElementRef */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */]) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [(typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ElementRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ElementRef */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */]) === 'function' && _c) || Object])
     ], CuppaDataGrid);
     return CuppaDataGrid;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 var CuppaDataGridModule = (function () {
     function CuppaDataGridModule() {
@@ -401,7 +409,7 @@ var KeysPipe = (function () {
         return keys;
     };
     KeysPipe = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* Pipe */])({ name: 'keys' }), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Pipe */])({ name: 'keys' }), 
         __metadata('design:paramtypes', [])
     ], KeysPipe);
     return KeysPipe;
@@ -447,8 +455,12 @@ var AppComponent = (function () {
             this.arrayList.push(tempObj);
         }
     }
+    AppComponent.prototype.onRowClick = function (row) {
+        console.log(row);
+        alert("selected row:" + row.id + " " + row.name + " " + row.mobile);
+    };
     AppComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Component */])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["f" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__(465),
             styles: [__webpack_require__(459)]
@@ -536,7 +548,7 @@ exports = module.exports = __webpack_require__(78)();
 
 
 // module
-exports.push([module.i, "\r\n*{\r\n    box-sizing: border-box;\r\n}\r\n.cuppa-grid{\r\n    background: rgb(247, 247, 247);\r\n    border: 2px solid #1976D2;\r\n    font-family: 'Arial',sans-serif;\r\n    font-size: 14px;\r\n    width: 100%;\r\n    margin: 0px auto;\r\n}\r\n.container{\r\n    width: 100%;\r\n    height: 310px;\r\n    overflow: auto;\r\n    position: relative;\r\n    padding: 0px;\r\n    background:#fff;\r\n    border-top: 1px solid #888;\r\n}\r\n.scroller{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 1px;\r\n    height: 300px;\r\n}\r\n.vrow{\r\n    width: 100%;\r\n    border-bottom: 1px solid #e4e4e4;\r\n    height: 31px;\r\n}\r\n.vcolumn{\r\n    display: inline-block;\r\n    padding: 8px;\r\n    border-right: 1px solid #e4e4e4;\r\n    \r\n}\r\n.vrow > .vcolumn:last-child{\r\n    border-right: 0px;\r\n}\r\n.header-row > .vcolumn{\r\n    cursor: pointer;\r\n}\r\n.header-row > .vcolumn:hover{\r\n    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.21);\r\n\r\n}\r\n.cuppa-grid{\r\n    position:relative;\r\n}\r\n.header-row{\r\n    width: calc(100% - 10px);\r\n    background: rgb(247, 247, 247);\r\n    border-bottom: 0px;\r\n    color: #000;\r\n    text-transform: capitalize;\r\n    font-weight: bold;\r\n   \r\n}\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n}\r\n \r\n::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3); \r\n    border-radius: 0px;\r\n    background: #f5f5f5;\r\n}\r\n \r\n::-webkit-scrollbar-thumb {\r\n    border-radius: 0px;\r\n    background: #ccc;\r\n}\r\n.description{\r\n    text-align: center;\r\n}\r\n.header-title{\r\n    float: left;\r\n}\r\n.header-sort{\r\n    position: relative;\r\nfloat: right;\r\n    width: 30px;\r\n    height: 15px;\r\n}\r\n.icon{\r\n    cursor: pointer;\r\n    position: absolute;\r\n    font-size: 23px;\r\n    top: -2px;\r\n}\r\n.grid-main-header{\r\n    background: #1976D2;\r\n    height: 40px;\r\n    padding: 6px;\r\n}\r\n.grid-search{\r\n    display: inline-block;\r\n    float: right;\r\n}\r\n.grid-search > input{\r\n    border-color: transparent;\r\n    height: 25px;\r\n    border-radius: 3px;\r\n    border-top-right-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n    float: left;\r\n}\r\n.grid-search > button{\r\n    display: inline-block;\r\n    padding: 0px 6px;\r\n    background: #144c98;\r\n    border: none;\r\n    height: 25px;\r\n    float: left;\r\n    color: #fff;\r\n    border-top-right-radius:3px;\r\n    border-bottom-right-radius: 3px;\r\n}\r\n.grid-title{\r\n    float: left;\r\n    line-height: 27px;\r\n    color: #fff;\r\n    font-weight: bold;\r\n    font-size: 16px;\r\n}\r\n.grid-footer{\r\n    padding: 5px 5px 0px 5px;\r\n    background: #f1f1f1;\r\n    border-top: 1px solid #ccc;\r\n}", ""]);
+exports.push([module.i, "\r\n*{\r\n    box-sizing: border-box;\r\n}\r\n.cuppa-grid{\r\n    background: rgb(247, 247, 247);\r\n    border: 2px solid #1976D2;\r\n    font-family: 'Arial',sans-serif;\r\n    font-size: 14px;\r\n    width: 100%;\r\n    margin: 0px auto;\r\n}\r\n.container{\r\n    width: 100%;\r\n    height: 310px;\r\n    overflow: auto;\r\n    position: relative;\r\n    padding: 0px;\r\n    background:#fff;\r\n    border-top: 1px solid #888;\r\n}\r\n.scroller{\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 1px;\r\n    height: 300px;\r\n}\r\n.vrow{\r\n    width: 100%;\r\n    border-bottom: 1px solid #e4e4e4;\r\n    height: 31px;\r\n    cursor: pointer;\r\n    -webkit-transition: all .1s linear;\r\n    transition: all .1s linear;\r\n}\r\n.cuppa-grid > .container > .vrow:hover{\r\n    background: rgba(25, 118, 210, 0.31);\r\n}\r\n.vcolumn{\r\n    display: inline-block;\r\n    padding: 8px;\r\n    border-right: 1px solid #e4e4e4;\r\n    \r\n}\r\n.vrow > .vcolumn:last-child{\r\n    border-right: 0px;\r\n}\r\n.header-row > .vcolumn{\r\n    cursor: pointer;\r\n}\r\n.header-row > .vcolumn:hover{\r\n    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.21);\r\n\r\n}\r\n.cuppa-grid{\r\n    position:relative;\r\n}\r\n.header-row{\r\n    width: calc(100% - 10px);\r\n    background: rgb(247, 247, 247);\r\n    border-bottom: 0px;\r\n    color: #000;\r\n    text-transform: capitalize;\r\n    font-weight: bold;\r\n   \r\n}\r\n::-webkit-scrollbar {\r\n    width: 10px;\r\n}\r\n \r\n::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3); \r\n    border-radius: 0px;\r\n    background: #f5f5f5;\r\n}\r\n \r\n::-webkit-scrollbar-thumb {\r\n    border-radius: 0px;\r\n    background: #ccc;\r\n}\r\n.description{\r\n    text-align: center;\r\n}\r\n.header-title{\r\n    float: left;\r\n}\r\n.header-sort{\r\n    position: relative;\r\nfloat: right;\r\n    width: 30px;\r\n    height: 15px;\r\n}\r\n.icon{\r\n    cursor: pointer;\r\n    position: absolute;\r\n    font-size: 23px;\r\n    top: -2px;\r\n}\r\n.grid-main-header{\r\n    background: #1976D2;\r\n    height: 40px;\r\n    padding: 6px;\r\n}\r\n.grid-search{\r\n    display: inline-block;\r\n    float: right;\r\n}\r\n.grid-search > input{\r\n    border-color: transparent;\r\n    height: 25px;\r\n    border-radius: 3px;\r\n    border-top-right-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n    float: left;\r\n}\r\n.grid-search > button{\r\n    display: inline-block;\r\n    padding: 0px 6px;\r\n    background: #144c98;\r\n    border: none;\r\n    height: 25px;\r\n    float: left;\r\n    color: #fff;\r\n    border-top-right-radius:3px;\r\n    border-bottom-right-radius: 3px;\r\n}\r\n.grid-title{\r\n    float: left;\r\n    line-height: 27px;\r\n    color: #fff;\r\n    font-weight: bold;\r\n    font-size: 16px;\r\n}\r\n.grid-footer{\r\n    padding: 5px 5px 0px 5px;\r\n    background: #f1f1f1;\r\n    border-top: 1px solid #ccc;\r\n}", ""]);
 
 // exports
 
@@ -606,14 +618,14 @@ module.exports = __webpack_require__.p + "Pe-icon-7-stroke.svg";
 /***/ 464:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"cuppa-grid\">\r\n     <div class=\"vrow grid-main-header\">\r\n         <div class=\"grid-title\">\r\n             <label>Cuppa Data Grid</label>\r\n         </div>\r\n         <div class=\"grid-search\">\r\n             <input (blur)=\"search($event)\" (keyup)=\"filter($event)\">\r\n            <button>Search</button>\r\n         </div>\r\n     </div>\r\n    <div class=\"header-row vrow\" >\r\n            <div *ngFor=\"let column of headSection;let k = index\" class=\"vcolumn\" [columnWidth]=\"headSection\" (click)=\"sortColumn(column)\" >\r\n                <span class=\"header-title\">{{column.title}} </span>\r\n                <div class=\"header-sort\">\r\n                    <i *ngIf=\"column.sorting=='desc'\" class=\"icon pe-7s-angle-up pe-lg\"></i>\r\n                    <i *ngIf=\"column.sorting=='asc'\" class=\"icon pe-7s-angle-down pe-lg\"></i>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    <div class=\"container\">\r\n        <div style=\"position:absolute;top:0;left:0;opacity:0;width:1px;\" [setContainerHeight]=\"totalHeight\"></div>\r\n        <div *ngFor=\"let person of chunkArray;let i = index\" class=\"vrow\" style=\"position: absolute;\" [styleProp]=\"chunkIndex[i]\">\r\n            <div *ngFor=\"let obj of person | keys\" class=\"vcolumn\" [columnWidth]=\"headSection\">{{obj.value}}</div>\r\n        </div>\r\n    </div>\r\n    <div class=\"grid-footer\">\r\n        <label>Total Rows:</label> <span>{{totalRows}}</span>\r\n    </div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"cuppa-grid\">\r\n     <div class=\"vrow grid-main-header\">\r\n         <div class=\"grid-title\">\r\n             <label>Cuppa Data Grid</label>\r\n         </div>\r\n         <div class=\"grid-search\">\r\n             <input (blur)=\"search($event)\" (keyup)=\"filter($event)\">\r\n            <button>Search</button>\r\n         </div>\r\n     </div>\r\n    <div class=\"header-row vrow\" >\r\n            <div *ngFor=\"let column of headSection;let k = index\" class=\"vcolumn\" [columnWidth]=\"headSection\" (click)=\"sortColumn(column)\" >\r\n                <span class=\"header-title\">{{column.title}} </span>\r\n                <div class=\"header-sort\">\r\n                    <i *ngIf=\"column.sorting=='desc'\" class=\"icon pe-7s-angle-up pe-lg\"></i>\r\n                    <i *ngIf=\"column.sorting=='asc'\" class=\"icon pe-7s-angle-down pe-lg\"></i>\r\n                </div>\r\n            </div>\r\n            <div class=\"vcolumn\">button column</div>\r\n        </div>\r\n    <div class=\"container\">\r\n        <div style=\"position:absolute;top:0;left:0;opacity:0;width:1px;\" [setContainerHeight]=\"totalHeight\"></div>\r\n        <div *ngFor=\"let person of chunkArray;let i = index\" class=\"vrow\" style=\"position: absolute;\" [styleProp]=\"chunkIndex[i]\" (click)=\"onRowClick(person)\">\r\n            <div *ngFor=\"let obj of person | keys\" class=\"vcolumn\" [columnWidth]=\"headSection\">{{obj.value}}</div>\r\n        </div>\r\n    </div>\r\n    <div class=\"grid-footer\">\r\n        <label>Total Rows:</label> <span>{{totalRows}}</span>\r\n    </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
 /***/ 465:
 /***/ (function(module, exports) {
 
-module.exports = "     <nav class=\"navbar navbar-default navbar-fixed-top\">\n      <div class=\"container\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" href=\"https://cuppalabs.github.io/angular2-dataGrid/\">\n          <img alt=\"Brand\" src=\"assets/img/cuppa-logo.png\">\n          Cuppa Angular 2 Data Grid</a>\n        </div>\n        <div id=\"navbar\" class=\"navbar-collapse collapse\">\n            <ul class=\"nav navbar-nav navbar-right\">\n              <li><a href=\"https://github.com/CuppaLabs/angular2-dataGrid#cuppa-angular-2-data-grid-component\">Getting Started</a></li>\n              <li><a href=\"https://github.com/CuppaLabs/angular2-dataGrid#getting-started\">Documentation</a></li>\n              <li><a href=\"https://github.com/CuppaLabs/angular2-dataGrid\">Github</a></li>\n\n            </ul>\n        </div><!--/.navbar-collapse -->\n      </div>\n    </nav>\n    <div class=\"col-md-12\">\n    <h1 style=\"text-align: center;padding: 20px 0px 0px 0px;\">Angular 2 Data Grid Example</h1>\n    <h3 style=\"text-align: center;padding: 0px 0px 10px 0px;\">Render 10,000+ records with high performance</h3>\n      <cuppa-datagrid [datalist] = \"arrayList\" [config]=\"config\"></cuppa-datagrid> \n    </div>"
+module.exports = "     <nav class=\"navbar navbar-default navbar-fixed-top\">\n      <div class=\"container\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" href=\"https://cuppalabs.github.io/angular2-dataGrid/\">\n          <img alt=\"Brand\" src=\"assets/img/cuppa-logo.png\">\n          Cuppa Angular 2 Data Grid</a>\n        </div>\n        <div id=\"navbar\" class=\"navbar-collapse collapse\">\n            <ul class=\"nav navbar-nav navbar-right\">\n              <li><a href=\"https://github.com/CuppaLabs/angular2-dataGrid#cuppa-angular-2-data-grid-component\">Getting Started</a></li>\n              <li><a href=\"https://github.com/CuppaLabs/angular2-dataGrid#getting-started\">Documentation</a></li>\n              <li><a href=\"https://github.com/CuppaLabs/angular2-dataGrid\">Github</a></li>\n\n            </ul>\n        </div><!--/.navbar-collapse -->\n      </div>\n    </nav>\n    <div class=\"col-md-12\">\n    <h1 style=\"text-align: center;padding: 20px 0px 0px 0px;\">Angular 2 Data Grid Example</h1>\n    <h3 style=\"text-align: center;padding: 0px 0px 10px 0px;\">Render 10,000+ records with high performance</h3>\n      <cuppa-datagrid [datalist] = \"arrayList\" [config]=\"config\" (onRowSelect)=\"onRowClick($event)\"></cuppa-datagrid> \n    </div>"
 
 /***/ }),
 
