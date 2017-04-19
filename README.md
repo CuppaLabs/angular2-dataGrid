@@ -80,6 +80,11 @@ export class AppComponent implements OnInit {
   }
 ```
 
+### Events
+  - `onRowSelect` - Return the clicked row object.
+  Example : (onRowSelect)="onRowClick($event)"
+
+
 Thats all Folks !! You are good to go.
 
 Please raise any issues [here](https://github.com/CuppaLabs/angular2-dataGrid/issues)
