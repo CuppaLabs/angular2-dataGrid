@@ -47,7 +47,7 @@ import { CuppaDataGridModule } from 'cuppa-ng2-grid/cuppa-ng2-dataGrid';
 ### HTML
 - Place the component html tag in the template where the table needs to be rendered.
 ```html
-<cuppa-datagrid [datalist] = "arrayList" [config]="config"></cuppa-datagrid>
+<cuppa-datagrid [datalist] = "arrayList" [config]="config" (onRowSelect)="onRowClick($event)"></cuppa-datagrid>
 ```
 
 ### JS 
@@ -76,13 +76,18 @@ export class AppComponent implements OnInit {
                 {"id":9,"name":"Villanueva","mobile":9695365778},
                 {"id":10,"name":"Gonzalez","mobile":9946879817},
                 {"id":11,"name":"Dorsey","mobile":9243595415}
-            ]
+            ];
+      private onRowClick(row:any){
+        console.log(row);
+        alert("selected row:"+ row.id +" "+row.name+" "+row.mobile);
+      }
   }
 ```
 
 ### Events
   - `onRowSelect` - Return the clicked row object.
-  Example : (onRowSelect)="onRowClick($event)"
+
+     Example : (onRowSelect)="onRowClick($event)"
 
 
 Thats all Folks !! You are good to go.
