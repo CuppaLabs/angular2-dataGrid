@@ -12,12 +12,16 @@ body{
 h1 {
   color: #00BCD4;
 }
+.example-title{
+    border-bottom: 1px solid #ccc;
+}
 .navbar-default {
     background-color: #ffffff;
     border-color: #ffffff;
     border-radius: 0px;
     margin: 0px;
     border: 0px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
 }
 .navbar-brand {
 }
@@ -42,6 +46,9 @@ h1 {
 }
 .component-title{
   font-weight: 400;
+  line-height: 50px;
+  font-size: 20px;
+  margin: 0px;
 
 }
 .component-title > span{
@@ -72,7 +79,7 @@ iframe{
 }
 @media (min-width: 768px){
     .component-title{ 
-      margin-top: 45px;
+      margin-top: 0px;
     }
     .nav-pills > li > a{
       padding: 10px 15px;
@@ -137,8 +144,30 @@ footer{
     text-align: center;
 }
 .navbar-brand img{
-    float: left;
-    width: 26px;
-    margin-top: -3px;
-    margin-right: 5px;
+    height: 32px;
+    margin-top: -7px;
+}
+.vcolumn .btn-default{
+    padding: 2px 10px;
+}
+.left-container{
+    padding: 0px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.list-group-item.active,.list-group-item.active:hover,.list-group-item.active:focus{
+    background-color: #FFCB2D;
+    border-color: #FFCB2D;
+}
+.list-group-item{
+    border-right: 0px;
+}
+.list-group-item:first-child{
+    font-size: 18px;
+    background: #fff;
+    font-weight: 500;
+    color: #333;
+}
+.list-group-item:first-child,.list-group-item:last-child {
+    border-radius: 0px;
 }

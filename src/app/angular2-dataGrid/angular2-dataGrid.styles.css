@@ -11,7 +11,7 @@
     margin: 0px auto;
 }
 .container{
-    width: 100%;
+    width: calc(100% - 1px);
     height: 310px;
     overflow: auto;
     position: relative;

@@ -1,11 +1,11 @@
-import { Component, OnInit, NgModule, OnChanges, ViewEncapsulation, Input, Output, EventEmitter, ElementRef, AfterViewInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, NgModule, OnChanges, ContentChild, ContentChildren,QueryList, ViewEncapsulation, AfterContentInit, Input, Output, EventEmitter, ElementRef, AfterViewInit, Pipe, PipeTransform } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { CommonModule }       from '@angular/common';
 import {KeysPipe} from './keypipe'
 import {styleDirective} from './dataGrid-directive'
 import {columnWidth} from './dataGrid-directive'
 import {SetContainerHeight} from './dataGrid-directive'
-
+import {Column, Heading, TemplateRenderer, ColumnTemplateRenderer} from './column';
 
 @Component({
   selector: 'cuppa-datagrid',
@@ -13,12 +13,14 @@ import {SetContainerHeight} from './dataGrid-directive'
   styleUrls: ['angular2-dataGrid.styles.css','icons.css']
 })
 
-export class CuppaDataGrid implements AfterViewInit{ 
+export class CuppaDataGrid implements AfterViewInit, AfterContentInit{ 
     
-    @Input() datalist: any;
+    @Input() datalist: Column[];
     @Input() config: any;
     @Output('onRowSelect') 
         rowClick: EventEmitter<any> = new EventEmitter<any>();
+    @ContentChild(Heading) heading: Heading;
+    @ContentChildren(Column) columns: QueryList<Column>;
 
     private width:any;
     private height:any;
@@ -61,6 +63,8 @@ export class CuppaDataGrid implements AfterViewInit{
     }
     ngAfterViewInit() {
         this._elementRef.nativeElement.getElementsByClassName("container")[0].addEventListener('scroll', this.onScroll.bind(this));
+    }
+    ngAfterContentInit(){
     }
     private generateHeadArray(row:any[]){
         
@@ -131,22 +135,23 @@ export class CuppaDataGrid implements AfterViewInit{
         return scroller;
     }
     private sortColumn(column:any){
-        
-        for(var t=0;t<this.headSection.length;t++){
-            if(t != column.index){
-                this.headSection[t].sorting = "";
-            }     
-        }
-        if(column.sorting == ""){
-             column.sorting = "asc"
-        }
-        this.items = this.mergeSort(this.items,column.prop,column.sorting);
-        this.updateView(this.scrollTop);
-        if(column.sorting == "asc"){
-            column.sorting = "desc"
-        }
-        else if(column.sorting == "desc"){
-            column.sorting = "asc";
+        if(this.config.sort){
+            for(var t=0;t<this.headSection.length;t++){
+                if(t != column.index){
+                    this.headSection[t].sorting = "";
+                }     
+            }
+            if(column.sorting == ""){
+                column.sorting = "asc"
+            }
+            this.items = this.mergeSort(this.items,column.prop,column.sorting);
+            this.updateView(this.scrollTop);
+            if(column.sorting == "asc"){
+                column.sorting = "desc"
+            }
+            else if(column.sorting == "desc"){
+                column.sorting = "asc";
+            }
         }
     }
 
@@ -243,11 +248,14 @@ export class CuppaDataGrid implements AfterViewInit{
     private onRowClick(row:any){
         this.rowClick.emit(row);
     }
+    private getColumnData(row, field){
+        return row[field];
+    }
 
  }
 @NgModule({
   imports:      [ CommonModule ],
-  declarations: [CuppaDataGrid,KeysPipe, styleDirective,columnWidth,SetContainerHeight],
-  exports:      [CuppaDataGrid,KeysPipe, styleDirective,columnWidth,SetContainerHeight ]
+  declarations: [CuppaDataGrid,KeysPipe, styleDirective,columnWidth,SetContainerHeight, Column, Heading, TemplateRenderer, ColumnTemplateRenderer],
+  exports:      [CuppaDataGrid,KeysPipe, styleDirective,columnWidth,SetContainerHeight, Column, Heading, TemplateRenderer, ColumnTemplateRenderer]
 })
 export class CuppaDataGridModule { }

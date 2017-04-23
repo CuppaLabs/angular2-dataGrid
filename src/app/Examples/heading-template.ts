@@ -1,17 +1,24 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+        <h3 class="example-title">Heading Template</h3>
+        <cuppa-datagrid [datalist] = "arrayList" [config]="config">
+          <c-heading>
+            <ng-template> 
+              <span class="fa fa-list"></span>
+              <b>Heading Template</b>
+            </ng-template>
+          </c-heading>
+      </cuppa-datagrid> 
+  `
 })
-export class AppComponent {
-  title = 'app works!';
+export class HeadingTemplateExample {
+
   arrayList:any[] = [];
   selectedRow: any = {};
   notification: boolean = false;
   private config = {
-    title:"Cuppa Data Table",
     w: 300,
     h: 300,
     itemHeight: 41,

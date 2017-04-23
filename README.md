@@ -56,6 +56,7 @@ import { CuppaDataGridModule } from 'cuppa-ng2-grid/cuppa-ng2-dataGrid';
 ```js 
 export class AppComponent implements OnInit {
       private config = {
+        title: "Cuppa Data Table",
         w: 300,
         h: 300,
         itemHeight: 31,
@@ -82,6 +83,58 @@ export class AppComponent implements OnInit {
         alert("selected row:"+ row.id +" "+row.name+" "+row.mobile);
       }
   }
+```
+
+### Config Options
+The following config options can be used
+
+| Setting         |Type    | Description            |
+|:--- |:--- |:--- |:--- |
+| title | String | Set the title of the table |
+| w | Number | Set the width of the table. |
+| h | Number | Set the height of the table. |
+| itemHeight | Number | Set the height of the row. |
+| totalRows | Number | Total number of records. |
+| items | Array | Array of table records. |
+| sort | Object | Object to set the default column for sorting.|
+
+### Column Template
+Custom content or elements can be added to table columns.
+
+  - `<c-column>` - Column component for the table.
+  - Example:
+
+```html
+    <cuppa-datagrid [datalist] = "arrayList" [config]="config">
+          <c-column field="id"></c-column>
+          <c-column field="name">
+            <ng-template let-person="rowData">
+                <span>{{person.name}}</span>
+            </ng-template>
+          </c-column>
+          <c-column field="mobile"></c-column>
+          <c-column>
+            <ng-template let-person="rowData">
+                <button class="btn btn-default btn-success" (click)="getRowData(person)">Get Row</button>
+            </ng-template>
+          </c-column>
+      </cuppa-datagrid>
+```
+
+### Heading Template
+The table heading can be customised with the `<c-heading>` tag. The following example show how to use a font awesome icon with text in the title section.
+  -Example:
+
+```html
+        <cuppa-datagrid [datalist] = "arrayList" [config]="config">
+          <c-heading>
+            <ng-template> 
+              <span class="fa fa-list"></span>
+              <b>Heading Template</b>
+            </ng-template>
+          </c-heading>
+      </cuppa-datagrid> 
+
 ```
 
 ### Events

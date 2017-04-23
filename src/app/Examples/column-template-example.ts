@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+        <h3 class="example-title">Column Template</h3>
+        <cuppa-datagrid [datalist] = "arrayList" [config]="config">
+          <c-column field="id"></c-column>
+          <c-column field="name">
+            <ng-template let-person="rowData">
+                <span>{{person.name}}</span>
+            </ng-template>
+          </c-column>
+          <c-column field="mobile"></c-column>
+          <c-column>
+            <ng-template let-person="rowData">
+                <button class="btn btn-default btn-success" (click)="getRowData(person)">Get Row</button>
+            </ng-template>
+          </c-column>
+      </cuppa-datagrid> 
+  `
 })
-export class AppComponent {
-  title = 'app works!';
+export class ColumnTemplateExample {
+
   arrayList:any[] = [];
   selectedRow: any = {};
   notification: boolean = false;

@@ -29,10 +29,10 @@ export class columnWidth {
 
    }
 
-  @Input('columnWidth') columnWidth:any[];
+  @Input('columnWidth') columns:any[];
 
    ngOnInit() {
-      this.el.nativeElement.style.width = (100/this.columnWidth.length)+"%";
+      this.el.nativeElement.style.width = (100/this.columns.length)+"%";
    }
 }
 

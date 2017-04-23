@@ -1,5 +1,5 @@
-     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -8,21 +8,42 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="https://cuppalabs.github.io/angular2-dataGrid/">
-          <img alt="Brand" src="assets/img/cuppa-logo.png">
-          Cuppa Angular 2 Data Grid</a>
+          <img alt="Brand" src="assets/img/cuppa-logo-coffee11.png">
+          </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+           <ul class="nav navbar-nav navbar-left">
+              <li><label class="component-title">Angular 2 Data Grid</label></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="https://github.com/CuppaLabs/angular2-dataGrid#cuppa-angular-2-data-grid-component">Getting Started</a></li>
               <li><a href="https://github.com/CuppaLabs/angular2-dataGrid#getting-started">Documentation</a></li>
               <li><a href="https://github.com/CuppaLabs/angular2-dataGrid">Github</a></li>
 
             </ul>
-        </div><!--/.navbar-collapse -->
+        </div>
       </div>
     </nav>
-    <div class="col-md-12">
-    <h1 style="text-align: center;padding: 20px 0px 0px 0px;">Angular 2 Data Grid Example</h1>
-    <h3 style="text-align: center;padding: 0px 0px 10px 0px;">Render 10,000+ records with high performance</h3>
-      <cuppa-datagrid [datalist] = "arrayList" [config]="config" (onRowSelect)="onRowClick($event)"></cuppa-datagrid> 
+    <div class="col-md-2 left-menu">
+      <div class="list-group">
+        <a href="#" class="list-group-item disabled">
+          Examples
+        </a>
+        <a [routerLink]="['basicexample']" routerLinkActive="active" href="#" class="list-group-item">Basic Example</a>
+        <a [routerLink]="['sorting']" routerLinkActive="active" href="#" class="list-group-item">Sorting</a>
+        <a [routerLink]="['columntemplate']" routerLinkActive="active" href="#" class="list-group-item">Column Template</a>
+         <a [routerLink]="['headingtemplate']" routerLinkActive="active" href="#" class="list-group-item">Heading Template</a>
+      </div>
+    </div>
+    <div class="col-md-10 example-content">
+    <!--<h1 style="text-align: center;padding: 20px 0px 0px 0px;">Angular 2 Data Grid Example</h1>
+    <h3 style="text-align: center;padding: 0px 0px 10px 0px;">Render 10,000+ records with high performance</h3> -->
+    <router-outlet></router-outlet>
+      <div class="c-notification" [hidden]="!notification">
+        <span class="fa fa-close" (click)="notification=false"></span>
+        <h4>Selected Row Details</h4>
+        <label><b>Id:</b> {{selectedRow.id}}</label><br>
+        <label><b>Name:</b> {{selectedRow.name}}</label><br>
+        <label><b>Mobile:</b> {{selectedRow.mobile}}</label>
+      </div>
     </div>
