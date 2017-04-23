@@ -91,8 +91,8 @@ export class AppComponent implements OnInit {
 ### Config Options
 The following config options can be used
 
-| Setting         |Type    | Description            |
-|:--- |:--- |:--- |:--- |
+| Setting|Type| Description|
+| --- | --- | --- |
 | title | String | Set the title of the table |
 | w | Number | Set the width of the table. |
 | h | Number | Set the height of the table. |
