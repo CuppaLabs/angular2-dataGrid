@@ -8,7 +8,7 @@ import { HeadingTemplateExample } from './Examples/heading-template';
 import { SortingExample } from './Examples/sorting-example';
 
 const appRoutes: Routes = [
-    { path: '', component: ColumnTemplateExample},
+    { path: '', redirectTo: '/basicexample',pathMatch: 'full'},
     { path: 'basicexample', component: BasicExample},
     { path: 'columntemplate', component: ColumnTemplateExample},
     { path: 'sorting', component: SortingExample},

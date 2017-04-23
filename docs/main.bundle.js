@@ -151,7 +151,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_3__Examples_column_template_example__["a" /* ColumnTemplateExample */] },
+    { path: '', redirectTo: '/basicexample', pathMatch: 'full' },
     { path: 'basicexample', component: __WEBPACK_IMPORTED_MODULE_2__Examples_basic_example__["a" /* BasicExample */] },
     { path: 'columntemplate', component: __WEBPACK_IMPORTED_MODULE_3__Examples_column_template_example__["a" /* ColumnTemplateExample */] },
     { path: 'sorting', component: __WEBPACK_IMPORTED_MODULE_5__Examples_sorting_example__["a" /* SortingExample */] },
