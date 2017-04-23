@@ -4,6 +4,13 @@ import { Component } from '@angular/core';
   template: `
     <h3 class="example-title">Virtual Scrolling - 10k Rows</h3>
     <cuppa-datagrid [datalist] = "arrayList" [config]="config"></cuppa-datagrid>
+    <div class="c-notification" [hidden]="!notification">
+        <span class="fa fa-close" (click)="notification=false"></span>
+        <h4>Selected Row Details</h4>
+        <label><b>Id:</b> {{selectedRow.id}}</label><br>
+        <label><b>Name:</b> {{selectedRow.name}}</label><br>
+        <label><b>Mobile:</b> {{selectedRow.mobile}}</label>
+    </div>
   `
 })
 export class BasicExample {

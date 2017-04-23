@@ -17,6 +17,13 @@ import { Component } from '@angular/core';
             </ng-template>
           </c-column>
       </cuppa-datagrid> 
+        <div class="c-notification" [hidden]="!notification">
+            <span class="fa fa-close" (click)="notification=false"></span>
+            <h4>Selected Row Details</h4>
+            <label><b>Id:</b> {{selectedRow.id}}</label><br>
+            <label><b>Name:</b> {{selectedRow.name}}</label><br>
+            <label><b>Mobile:</b> {{selectedRow.mobile}}</label>
+        </div>
   `
 })
 export class SortingExample {

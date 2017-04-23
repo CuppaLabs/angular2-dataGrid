@@ -171,3 +171,28 @@ footer{
 .list-group-item:first-child,.list-group-item:last-child {
     border-radius: 0px;
 }
+.c-notification{
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    width: 300px;
+    height: 150px;
+    background: #1976D2;
+    padding: 15px;
+    color: #fff;
+    border-radius: 5px;
+    transition: all .1s linear;
+}
+.c-notification > h4{
+    border-bottom: 1px solid #fff;
+}
+.c-notification > .fa-close{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all .1s linear;
+}
+.c-notification > .fa-close:hover{
+    transform: rotate(90deg);
+}
