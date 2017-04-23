@@ -1,6 +1,6 @@
 {
   "name": "cuppa-ng2-grid",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Angular 2 data grid component written in pure angular 2 and typescript",
   "keywords": [
     "angular2",

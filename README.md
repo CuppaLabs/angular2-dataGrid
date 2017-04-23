@@ -1,4 +1,7 @@
 # Cuppa Angular 2 Data Grid Component
+
+[![npm version](https://img.shields.io/npm/v/cuppa-ng2-grid.svg)](https://www.npmjs.com/package/cuppa-ng2-grid)
+
 ### Render 10,000+ Records with high performance
 It is often required that, large datasets needs to be rendered in the front-end table. Cuppa Angular 2 Data Grid components handles 10K + records with high performance. Developed using `Angular 2`, `TypeScript`, `HTML`, `CSS` 
 
